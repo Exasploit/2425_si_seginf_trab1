@@ -1,0 +1,26 @@
+java -jar target\your-artifact-id-1.0-SNAPSHOT.jar -enc mensagem.txt certificates-keys\end-entities\Alice_1.cer
+
+java -jar target\your-artifact-id-1.0-SNAPSHOT.jar -dec encrypted_data.enc encrypted_key.enc certificates-keys\pfx\Alice_1.pfx changeit
+
+
+java -jar target\your-artifact-id-1.0-SNAPSHOT.jar -enc mensagem.txt certificates-keys\end-entities\Alice_2.cer
+
+java -jar target\your-artifact-id-1.0-SNAPSHOT.jar -dec encrypted_data.enc encrypted_key.enc certificates-keys\pfx\Alice_2.pfx changeit
+
+java -jar target\your-artifact-id-1.0-SNAPSHOT.jar -enc mensagem.txt certificates-keys\end-entities\Bob_1.cer
+
+java -jar target\your-artifact-id-1.0-SNAPSHOT.jar -dec encrypted_data.enc encrypted_key.enc certificates-keys\pfx\Bob_1.pfx changeit
+
+
+java -jar target\your-artifact-id-1.0-SNAPSHOT.jar -enc mensagem.txt certificates-keys\end-entities\Bob_2.cer
+
+java -jar target\your-artifact-id-1.0-SNAPSHOT.jar -dec encrypted_data.enc encrypted_key.enc certificates-keys\pfx\Bob_2.pfx changeit
+
+java -jar target\your-artifact-id-1.0-SNAPSHOT.jar -enc mensagem.txt certificates-keys\end-entities\Carol_1.cer
+
+java -jar target\your-artifact-id-1.0-SNAPSHOT.jar -dec encrypted_data.enc encrypted_key.enc certificates-keys\pfx\Carol_1.pfx changeit
+
+
+java -jar target\your-artifact-id-1.0-SNAPSHOT.jar -enc mensagem.txt certificates-keys\end-entities\Carol_2.cer
+
+java -jar target\your-artifact-id-1.0-SNAPSHOT.jar -dec encrypted_data.enc encrypted_key.enc certificates-keys\pfx\Carol_2.pfx changeit

@@ -113,7 +113,9 @@ public class HybridFileEncryptor {
     }
 
     private static byte[] encryptFileContent(String inputFile, SecretKey symmetricKey, String algorithm) throws Exception {
-        Cipher cipher = Cipher.getInstance(algorithm + "/CBC/PKCS5Padding");
+        //Cipher cipher = Cipher.getInstance(algorithm + "/CBC/PKCS5Padding");
+        Cipher cipher = Cipher.getInstance(algorithm + "/CBC/NoPadding");
+        //Cipher cipher = Cipher.getInstance(algorithm + "/CBC/PKCS5Padding");
         SecureRandom secureRandom = new SecureRandom();
         byte[] iv = new byte[cipher.getBlockSize()];
         secureRandom.nextBytes(iv);
@@ -138,7 +140,9 @@ public class HybridFileEncryptor {
     private static byte[] decryptFileContent(String encryptedFile, SecretKey symmetricKey, String algorithm) throws Exception {
         byte[] fileContent = readFromFile(encryptedFile);
 
-        Cipher cipher = Cipher.getInstance(algorithm + "/CBC/PKCS5Padding");
+        //Cipher cipher = Cipher.getInstance(algorithm + "/CBC/PKCS5Padding");
+        Cipher cipher = Cipher.getInstance(algorithm + "/CBC/NoPadding");
+        //Cipher cipher = Cipher.getInstance(algorithm + "/CBC/PKCS5Padding");
         int blockSize = cipher.getBlockSize();
 
         byte[] iv = new byte[blockSize];
@@ -177,6 +181,7 @@ private static SecretKey decryptSymmetricKey(byte[] encryptedKey, PrivateKey pri
 
     private static void saveToFile(String filename, byte[] data) throws IOException {
         byte[] encodedData = Base64.encodeBase64(data);
+        //byte[] encodedData = data;
         try (FileOutputStream fos = new FileOutputStream(filename)) {
             fos.write(encodedData);
         }
