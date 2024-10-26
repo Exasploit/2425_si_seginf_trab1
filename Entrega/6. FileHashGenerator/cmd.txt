@@ -1,0 +1,8 @@
+Compilar:
+javac FileHashGenerator.java
+
+Calcular hash de um ficheiro:
+java FileHashGenerator <filename> MD5 SHA-256
+
+Exemplo:
+java FileHashGenerator certificates-keys/trust-anchors/CA1.cer SHA-256
