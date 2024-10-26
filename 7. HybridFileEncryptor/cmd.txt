@@ -37,25 +37,7 @@ java -cp .;commons-codec-1.17.1.jar HybridFileEncryptor -enc mensagem.txt certif
 Decryption Command
 java -cp .;commons-codec-1.17.1.jar HybridFileEncryptor -dec encrypted_data.enc encrypted_key.enc certificates-keys\pfx\Alice_2.pfx changeit -symAlg DESede -asymAlg RSA -transformation DESede/CBC/PKCS5Padding
 
-5. Encryption and Decryption with AES/GCM/NoPadding (Authenticated Encryption)
-
-AES in GCM mode provides both confidentiality and integrity using an authentication tag. Note that GCM does not use padding.
-
-Encryption Command
-java -cp .;commons-codec-1.17.1.jar HybridFileEncryptor -enc mensagem.txt certificates-keys\end-entities\Alice_2.cer -symAlg AES -asymAlg RSA -transformation AES/GCM/NoPadding
-
-Decryption Command
-java -cp .;commons-codec-1.17.1.jar HybridFileEncryptor -dec encrypted_data.enc encrypted_key.enc certificates-keys\pfx\Alice_2.pfx changeit -symAlg AES -asymAlg RSA -transformation AES/GCM/NoPadding
-
-6. Encryption and Decryption with AES/ECB/PKCS5Padding (No IV)
-
-Encryption Command
-java -cp .;commons-codec-1.17.1.jar HybridFileEncryptor -enc mensagem.txt certificates-keys\end-entities\Alice_2.cer -symAlg AES -asymAlg RSA -transformation AES/ECB/PKCS5Padding
-
-Decryption Command
-java -cp .;commons-codec-1.17.1.jar HybridFileEncryptor -dec encrypted_data.enc encrypted_key.enc certificates-keys\pfx\Alice_2.pfx changeit -symAlg AES -asymAlg RSA -transformation AES/ECB/PKCS5Padding
-
-7. Encryption and Decryption with AES/CTR/NoPadding
+5. Encryption and Decryption with AES/CTR/NoPadding
 
 Encryption Command
 java -cp .;commons-codec-1.17.1.jar HybridFileEncryptor -enc mensagem.txt certificates-keys\end-entities\Alice_2.cer -symAlg AES -asymAlg RSA -transformation AES/CTR/NoPadding
